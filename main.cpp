@@ -28,8 +28,12 @@ int main()
     cout << "value(Int) : " << static_cast<int>(value) << endl;
 
     bool state(0);
-    cout <<std:: boolalpha; //convert number into string 0 =false and 1=true
+    cout << std::boolalpha; //convert number into string 0 =false and 1=true
     cout<< "state : " << state <<endl;
+
+    unsigned int  var3{33343u};
+    var3 = 223;
+    cout << var3 << endl;
 
     return 0;
 }
