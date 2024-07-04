@@ -8,25 +8,9 @@ using namespace std;
 // military to minutes
 int MTM(const string &timeData)
 {
-    // // it will extract the first 2 substring
-    // int hours = stoi(timeData.substr(0, 2)); // stoi = string to interger
-    // // cout << hours << endl;
 
-    // // it extract the two substring , excluding first 2
-    // int minutes = stoi(timeData.substr(2, 2));
-    // // cout << minutes << endl;
-
-    // return hours * 60 + minutes;
-
-    stringstream ss(timeData.substr(0, 2));
-
-    int hours = 0;
-    ss >> hours;
-
-    ss.clear();
-    ss.str(timeData.substr(2, 2));
-    int minutes = 0;
-    ss >> minutes;
+    int hours = (timeData[0]-'0') * 10 + (timeData[1] - '0');
+    int minutes =(timeData[2] -'0') * 10 +(timeData[3]- '0');
 
     return hours * 60 + minutes;
 }
