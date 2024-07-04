@@ -8,10 +8,8 @@ using namespace std;
 // military to minutes
 int MTM(const string &timeData)
 {
-
     int hours = (timeData[0]-'0') * 10 + (timeData[1] - '0');
     int minutes =(timeData[2] -'0') * 10 +(timeData[3]- '0');
-
     return hours * 60 + minutes;
 }
 

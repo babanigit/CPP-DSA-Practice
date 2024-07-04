@@ -26,10 +26,9 @@ int main()
     {
         f2();
     }
-    catch (const char *msg)
+    catch (const char* msg)
     {
         cerr << "Exception caught: " << msg << endl;
-
         // cerr << e.what() << '\n';
     }
 
