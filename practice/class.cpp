@@ -4,30 +4,48 @@
 #include <string>
 using namespace std;
 
-class Person {
-    private:
+
+class Person
+{
+
+private:
     string name;
     int age;
 
-    public:
-    Person(const string& n, int  a):name(n), age(a) {
-    cout << "hello contractor called " << endl;
+public:
+    Person(const string &n, int a) : name(n), age(a)
+    {
+        cout << "hello contractor called " << endl;
+        
     }
 
-    void display(){
-                std::cout << "Name: " << name << ", Age: " << age << std::endl;
-
+    void display()
+    {
+        std::cout << "Name: " << name << ", Age: " << age << std::endl;
     }
+
+    friend class Child;
+
+};
+
+class Child : public Person
+{
+
+private:
+    string name2;
+    int age2;
+
+public:
+    string name3;
+    int age3
+
 };
 
 int main(int argc, char const *argv[])
 {
-    Person p1("aniket panchal",20);
-    Person p2("eren jeagear",21);
+    Person p1("aniket panchal", 20);
 
     p1.display();
-
-
 
     return 0;
 }
