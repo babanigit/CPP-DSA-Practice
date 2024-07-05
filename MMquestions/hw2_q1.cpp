@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
-    // getting number
+    // getting number into string cause we have comma
     cout << "Enter an integer between 1,000 and 999,999 including the comma: ";
     string inputWithComma;
     cin >> inputWithComma;
@@ -16,10 +16,10 @@ int main(int argc, char const *argv[])
     // finding comma postion
     int commaPostion = inputWithComma.rfind(',');
 
-    // removing comma
-    string numberWithoutComma = inputWithComma.substr(0, commaPostion) + inputWithComma.substr(commaPostion + 1);
+    // removing comma from the string
+    string numberWithoutComma = inputWithComma.substr(0, commaPostion) + inputWithComma.substr(commaPostion+1);
 
-    // converting string into int
+    // converting string into int (better practice)
     stringstream ss(numberWithoutComma);
     int numbers;
     ss >> numbers;
