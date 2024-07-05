@@ -27,6 +27,7 @@ public:
                 ans += m[s[i]];
             }
         }
+
         return ans;
     }
 };
