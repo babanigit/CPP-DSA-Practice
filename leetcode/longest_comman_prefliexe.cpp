@@ -15,8 +15,7 @@ public:
         sort(v.begin(), v.end());
 
         int n = v.size();
-        string first = v[0], last = v[n - 1];+
-
+        string first = v[0], last = v[n - 1];
 
         for (int i = 0; i < min(first.size(), last.size()); i++)
         {
