@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 
     // removing comma from the string
     string numberWithoutComma = inputWithComma.substr(0, commaPostion) + inputWithComma.substr(commaPostion+1);
-
+    
     // converting string into int (better practice)
     stringstream ss(numberWithoutComma);
     int numbers;
