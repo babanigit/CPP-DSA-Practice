@@ -12,13 +12,12 @@ int main(int argc, char const *argv[])
     int monthNumber;
     cin >> monthNumber;
 
-    if (monthNumber <= 12 && monthNumber >= 1)
-    {
+    if (monthNumber <= 12 && monthNumber >= 1){
+
         string month = months.substr((monthNumber - 1) * 9, 9); // 9 cause september has higest alphabates
         cout << "The corresponding month is: " << month << endl;
-    }
-    else
-    {
+    }else{
+        
         cout << "invalid!" << endl;
     }
 
