@@ -1,15 +1,11 @@
-// CPP Program to demonstrate that function overloading
-// fails if only return types are different
 #include <iostream>
-int fun() { return 10; }
+using namespace std;
 
-char fun() { return 'a'; }
-// compiler error as it is a new declaration of fun()
-
-// Driver Code
 int main()
 {
-    char x = fun();
-    // getchar();
+    
+    size_t var = 12;
+    cout << var << endl;
+
     return 0;       
 }

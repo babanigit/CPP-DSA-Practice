@@ -7,6 +7,7 @@ using namespace std;
 
 int main()
 {
+    
     // getting number into string cause we have comma
     cout << "Enter an integer between 1,000 and 999,999 including the comma: ";
     string inputWithComma;
