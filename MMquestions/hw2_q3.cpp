@@ -19,7 +19,6 @@ int main()
     string equation;
     getline(cin, equation);
 
-    // 1*x^2+1*x-6=0
     // Find positions of key characters
     size_t pos_x2 = equation.find("*x^2");
     size_t pos_x = equation.find("*x", pos_x2 + 3); // search after "*x^2"
@@ -27,21 +26,16 @@ int main()
 
     // Extract substrings for coefficients a, b, c
     double a = stod(equation.substr(0, pos_x2)); // from start to "*x^2" // to get the first number
-    // cout << "the double of a is : " << a << endl;
 
-    double b = stod(equation.substr(pos_x2 + 3, pos_x - pos_x2 - 3)); // from "*x^2" to "*x" // 7-1-3= 3 // to get the 2nd number
+    double b = stod(equation.substr(pos_x2 + 4, pos_x - pos_x2 - 4)); // from "*x^2" to "*x" // 7-1-3= 3 // to get the 2nd number
     // cout << "pos_x2 + 3 : " << pos_x2 + 3 << endl;
     // cout << "pos_x - pos_x2 - 3 : " << pos_x - pos_x2 - 3 << endl;
-    // cout << "the double of b is : " << b << endl;
 
     double c = stod(equation.substr(pos_x + 2, pos_eq - pos_x - 2)); // from "*x" to "=" // to get the third number with sign
-    // cout << "the double of c is : " << c << endl;
-
-    cout << a << b << c << endl;
 
     // Calculate discriminant
     double discriminant = b * b - 4 * a * c;
-    cout << "the discriminant is : " << discriminant << endl;
+    // cout << "the discriminant is : " << discriminant << endl;
 
     if (a == 0)
     {
@@ -59,12 +53,9 @@ int main()
 
         // Output roots
         cout << "(-b - the square root of the discriminant) / 2a is "
-        //  << round(root1) << " -" 
-         << root1 << endl;
+             << root1 << endl;
         cout << "(-b + the square root of the discriminant) / 2a is "
-        //  << round(root2) << " -" 
-         << root2  << endl;
+             << root2 << endl;
     }
-
     return 0;
 }

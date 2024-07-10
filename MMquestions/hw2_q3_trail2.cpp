@@ -28,6 +28,8 @@ int main() {
     double b = stod(equation.substr(pos_x2 + 3, pos_x - pos_x2 - 3)); // from "*x^2" to "*x"
     double c = stod(equation.substr(pos_x + 2, pos_eq - pos_x - 2)); // from "*x" to "="
 
+        cout << a << b << c << endl;
+
     // Calculate discriminant
     double discriminant = b * b - 4 * a * c;
 

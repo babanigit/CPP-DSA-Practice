@@ -28,7 +28,7 @@ int main()
 
     double a = stod(equation.substr(0, pos_a));
     double b = stod(equation.substr(pos_a + 4, pos_b - (pos_a + 4)));
-    double c = stod(equation.substr(pos_b + 3, pos_c - (pos_b + 3)));
+    double c = stod(equation.substr(pos_b + 2, pos_c - (pos_b - 2)));
 
     cout << a << b << c << endl;
 
