@@ -5,8 +5,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    cout << demo[0] << " " << demo[1] << endl;
-
+    
     cout << "Type four ints with a single space between each adjacent pair of ints..." << endl;
     int nums[4];
     cin >> nums[0] >> nums[1] >> nums[2] >> nums[3];
