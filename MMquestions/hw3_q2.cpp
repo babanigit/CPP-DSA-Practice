@@ -23,8 +23,8 @@ int main()
             while (number > 0)
             {
                 // algorithm //if true then "0" or else "1"
-                binary = (number % 2 == 0 ? "0" : "1") + binary;
-                number /= 2; // dividing by 2
+                binary = (number % 2 == 0 ? "0" : "1") + binary; // "%" gives u remening number after dividing in reminder
+                number /= 2; // dividing by 2 , "/" gives u reminder
             }
         }
         cout << binary << endl;
