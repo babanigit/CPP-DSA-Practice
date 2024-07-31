@@ -3,10 +3,10 @@ using namespace std;
 
 
 int main() {
-/*
+
     basic_arith(100, 101);
     cout << endl;
-*/
+
 
 
 /*
