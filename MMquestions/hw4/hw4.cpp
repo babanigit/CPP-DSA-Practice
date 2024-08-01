@@ -1,94 +1,145 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <numeric>
-
+#include "hw4.hpp"
 using namespace std;
 
-// Function definitions
-
-void basic_arith(int a, int b) {
-    cout << "The specified ints were : " << a << " and " << b << endl;
-    cout << "Their sum is : " << (a + b) << endl;
-    cout << "Their product is : " << (a * b) << endl;
-    cout << "Their average is : " << ((a + b) / 2.0) << endl;
-    cout << "The maximum of the two numbers is : " << max(a, b) << endl;
-    cout << "The minimum of the two numbers is : " << min(a, b) << endl;
+// print the array of vector
+void print(const vector<int> &v)
+{
+    for (size_t i = 0, N = v.size(); i < N; ++i)
+    {
+        cout << v[i];
+        if (i < N - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
 }
 
-bool leap_year(int year) {
-    return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+// basic arithmatics
+void basic_arith(int i1, int i2)
+{
+    cout << "The specified ints were: " << i1 << " and " << i2 << endl;
+    cout << "Their sum is: " << (i1 + i2) << endl;
+    cout << "Their product is: " << (i1 * i2) << endl;
+    cout << "Their average is: " << (i1 + i2) / 2.0 << endl; 
+    cout << "The maximum of the two numbers is: " << max(i1, i2) << endl;
+    cout << "The minimum of the two numbers is: " << min(i1, i2) << endl;
 }
 
-void capitalize(string& s) {
-    for (char& c : s) {
-        if (c >= 'a' && c <= 'z') {
-            c -= ('a' - 'A'); // Convert lowercase to uppercase
+// leap year
+bool leap_year(int year)
+{
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+// capitalize function
+void capitalize(string &s)
+{
+    for (char &c : s)
+    {
+        if (islower(c))
+        {
+            c = toupper(c);
         }
     }
 }
 
-vector<int> concatenate(const vector<int>& v1, const vector<int>& v2) {
-    vector<int> result = v1; // Copy first vector
-    result.insert(result.end(), v2.begin(), v2.end()); // Append second vector
+// concatenate
+vector<int> concatenate(const vector<int> &v1, const vector<int> &v2)
+{
+    vector<int> result(v1);                            
+    result.insert(result.end(), v2.begin(), v2.end());
     return result;
 }
 
-void reverse(vector<int>& v) {
-    std::reverse(v.begin(), v.end());
+// reverse the array of vector
+void reverse(vector<int> &v)
+{
+    size_t N = v.size();
+    for (size_t i = 0; i < N / 2; ++i)
+    {
+        swap(v[i], v[N - 1 - i]); // Swapping the elements
+    }
 }
 
-double get_double(const string& prompt) {
+// get double
+double get_double(const string &prompt)
+{
+    cout << prompt << " ";
     double value;
-    cout << prompt;
-    while (!(cin >> value)) {
-        cin.clear(); // Clear error flag
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore bad input
-        cout << "Invalid input. Please enter a valid number: ";
-    }
+    cin >> value;
     return value;
 }
 
-string new_capitalized_version(string s) {
-    capitalize(s); // Use the capitalize function defined earlier
-    return s; // Return the modified string
+string new_capitalized_version(string s)
+{
+    capitalize(s); // Reuse the capitalize function
+    return s;      // Return the capitalized string
 }
 
-bool is_magic_square(const vector<vector<int>>& square) {
-    size_t n = square.size();
-    if (n == 0 || square[0].size() != n) return false; // Check if it's a square
+bool is_magic_square(const vector<vector<int>> &square)
+{
+    size_t N = square.size();
+    if (N == 0)
+        return true; // Empty square is considered magic
 
-    vector<bool> used(n * n + 1, false); // Track numbers 1 through N^2
+    // Check if square is square
+    for (const auto &row : square)
+    {
+        if (row.size() != N)
+            return false; // Not square
+    }
 
-    int magic_sum = n * (n * n + 1) / 2;
-
-    // Check rows
-    for (const auto& row : square) {
-        if (accumulate(row.begin(), row.end(), 0) != magic_sum) return false;
-        for (int num : row) {
-            if (num < 1 || num > n * n || used[num]) return false;
+    // Check for unique numbers from 1 to N^2
+    vector<bool> used(N * N + 1, false);
+    for (const auto &row : square)
+    {
+        for (int num : row)
+        {
+            if (num < 1 || num > N * N || used[num])
+            {
+                return false; // Out of range or duplicate
+            }
             used[num] = true;
         }
     }
 
-    // Check columns
-    for (size_t col = 0; col < n; ++col) {
+    // Check magic total
+    int magic_total = N * (N * N + 1) / 2;
+
+    // Check row sums
+    for (const auto &row : square)
+    {
         int sum = 0;
-        for (size_t row = 0; row < n; ++row) {
+        for (int num : row)
+        {
+            sum += num;
+        }
+        if (sum != magic_total)
+            return false;
+    }
+
+    // Check column sums
+    for (size_t col = 0; col < N; ++col)
+    {
+        int sum = 0;
+        for (size_t row = 0; row < N; ++row)
+        {
             sum += square[row][col];
         }
-        if (sum != magic_sum) return false;
+        if (sum != magic_total)
+            return false;
     }
 
-    // Check diagonals
-    int diag1_sum = 0, diag2_sum = 0;
-    for (size_t i = 0; i < n; ++i) {
-        diag1_sum += square[i][i];
-        diag2_sum += square[i][n - i - 1];
+    // Check diagonal sums
+    int diag1 = 0, diag2 = 0;
+    for (size_t i = 0; i < N; ++i)
+    {
+        diag1 += square[i][i];         // Main diagonal
+        diag2 += square[i][N - 1 - i]; // Secondary diagonal
     }
+    if (diag1 != magic_total || diag2 != magic_total)
+        return false;
 
-    if (diag1_sum != magic_sum || diag2_sum != magic_sum) return false;
-
-    return all_of(used.begin() + 1, used.end(), [](bool b) { return b; });
+    return true; // All checks passed
 }

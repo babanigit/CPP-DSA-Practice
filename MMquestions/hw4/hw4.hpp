@@ -6,13 +6,12 @@
 #ifndef hw4_hpp
 #define hw4_hpp
 
-
-#include <vector>     // std::vector
-#include <iostream>   // std::cout, std::cin
-#include <algorithm>  // std::max, std::min
-#include <string>     // std::string
-#include <utility>    // std::swap
-
+#include <vector>    // std::vector
+#include <iostream>  // std::cout, std::cin
+#include <algorithm> // std::max, std::min
+#include <string>    // std::string
+#include <utility>   // std::swap
+#include <cctype>    // For std::toupper
 
 /**
  A procedure which prints the ints
@@ -22,8 +21,7 @@
 
  @param v : the vector of ints whose elements are printed
 */
-void print(const std::vector<int>& v);
-
+void print(const std::vector<int> &v);
 
 /**
  A procedure which prints its two arguments,
@@ -36,7 +34,6 @@ void print(const std::vector<int>& v);
 */
 void basic_arith(int i1, int i2);
 
-
 /**
  A pure function which indicates
  whether a year is a leap year or not.
@@ -47,7 +44,6 @@ void basic_arith(int i1, int i2);
 */
 bool leap_year(int y);
 
-
 /**
  A procedure which mutates its argument string
  by transforming each lowercase alphabetic character
@@ -56,8 +52,7 @@ bool leap_year(int y);
 
  @param s : the string to capitalize
 */
-void capitalize(std::string& s);
-
+void capitalize(std::string &s);
 
 /**
  A pure function which returns the concatenation of two vectors of ints.
@@ -71,8 +66,7 @@ void capitalize(std::string& s);
          containing the elements of v1
          followed by the elements of v2
 */
-std::vector<int> concatenate(const std::vector<int>& v1, const std::vector<int>& v2);
-
+std::vector<int> concatenate(const std::vector<int> &v1, const std::vector<int> &v2);
 
 /**
  A procedure which reverses the elements in a vector of ints.
@@ -81,8 +75,7 @@ std::vector<int> concatenate(const std::vector<int>& v1, const std::vector<int>&
 
  @param v : the vector whose elements are reversed
 */
-void reverse(std::vector<int>& v);
-
+void reverse(std::vector<int> &v);
 
 /**
  * A function (neither a pure function or a procedure) that
@@ -95,9 +88,8 @@ void reverse(std::vector<int>& v);
  * @param prompt : the prompt to print followed by a space
  * @return the double obtained by
  *         interpreting characters in the input buffer
-*/
-double get_double(const std::string& prompt);
-
+ */
+double get_double(const std::string &prompt);
 
 /**
  A pure function that returns a string
@@ -110,7 +102,6 @@ double get_double(const std::string& prompt);
  @return the result of applying 'capitalize' to s
 */
 std::string new_capitalized_version(std::string s);
-
 
 /**
  * Says whether a vector of vector of ints
@@ -151,8 +142,7 @@ std::string new_capitalized_version(std::string s);
  * @param square : a vector of vector of ints
  * @return true if 'square' is a magic square;
  *         false otherwise
-*/
-bool is_magic_square(const std::vector<std::vector<int>>& square);
-
+ */
+bool is_magic_square(const std::vector<std::vector<int>> &square);
 
 #endif /* hw4_hpp */
