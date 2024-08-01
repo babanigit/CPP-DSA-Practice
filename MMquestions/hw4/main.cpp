@@ -4,10 +4,8 @@ using namespace std;
 int main()
 {
 
-    /*
     basic_arith(100, 101);
     cout << endl;
-    */
 
     /*
         vector<int> years { 2023, 2024, 2100, 2000 };
@@ -65,30 +63,28 @@ int main()
         cout << endl;
     */
 
-    /*
-        vector<vector<int>> square1 = { { 8, 3, 4 },
-                                        { 1, 5, 9 },
-                                        { 6, 7, 2 } };
+    vector<vector<int>> square1 = {{8, 3, 4},
+                                   {1, 5, 9},
+                                   {6, 7, 2}};
 
-        vector<vector<int>> square2 = { {  2,  7, 14, 11 },
-                                        {  9, 16,  5,  4 },
-                                        { 15, 10,  3,  6 },
-                                        {  8,  1, 12, 13 } };
+    vector<vector<int>> square2 = {{2, 7, 14, 11},
+                                   {9, 16, 5, 4},
+                                   {15, 10, 3, 6},
+                                   {8, 1, 12, 13}};
 
-        vector<vector<int>> square3 = { { 1 },
-                                        { 2, 3 } };
+    vector<vector<int>> square3 = {{1},
+                                   {2, 3}};
 
-        vector<vector<int>> square4 = { { 5, 5, 5 },
-                                        { 5, 5, 5 },
-                                        { 5, 5, 5 } };
+    vector<vector<int>> square4 = {{5, 5, 5},
+                                   {5, 5, 5},
+                                   {5, 5, 5}};
 
-        cout << boolalpha;
+    cout << boolalpha;
 
-        cout << is_magic_square(square1) << endl;
-        cout << is_magic_square(square2) << endl;
-        cout << is_magic_square(square3) << endl;
-        cout << is_magic_square(square4) << endl;
-    */
+    cout << is_magic_square(square1) << endl;
+    cout << is_magic_square(square2) << endl;
+    cout << is_magic_square(square3) << endl;
+    cout << is_magic_square(square4) << endl;
 
     return 0;
 }

@@ -21,7 +21,7 @@ void basic_arith(int i1, int i2)
     cout << "The specified ints were: " << i1 << " and " << i2 << endl;
     cout << "Their sum is: " << (i1 + i2) << endl;
     cout << "Their product is: " << (i1 * i2) << endl;
-    cout << "Their average is: " << (i1 + i2) / 2.0 << endl; 
+    cout << "Their average is: " << (i1 + i2) / 2.0 << endl;
     cout << "The maximum of the two numbers is: " << max(i1, i2) << endl;
     cout << "The minimum of the two numbers is: " << min(i1, i2) << endl;
 }
@@ -47,7 +47,7 @@ void capitalize(string &s)
 // concatenate
 vector<int> concatenate(const vector<int> &v1, const vector<int> &v2)
 {
-    vector<int> result(v1);                            
+    vector<int> result(v1);
     result.insert(result.end(), v2.begin(), v2.end());
     return result;
 }
@@ -71,12 +71,14 @@ double get_double(const string &prompt)
     return value;
 }
 
+//
 string new_capitalized_version(string s)
 {
-    capitalize(s); // Reuse the capitalize function
-    return s;      // Return the capitalized string
+    capitalize(s); // Reuse the fun
+    return s;
 }
 
+// square
 bool is_magic_square(const vector<vector<int>> &square)
 {
     size_t N = square.size();
