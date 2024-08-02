@@ -85,11 +85,11 @@ bool is_magic_square(const vector<vector<int>> &square)
     if (square_size == 0)
         return true; // Empty square is considered magic
 
-    // Check if square is square
+    // Check if each row in the square is of the correct size
     for (const auto &row : square)
     {
         if (row.size() != square_size)
-            return false; // Not square
+            return false; // Not a square
     }
 
     // Check for unique numbers from 1 to square_size^2
@@ -98,7 +98,7 @@ bool is_magic_square(const vector<vector<int>> &square)
     {
         for (int num : row)
         {
-            if (num < 1 || num > square_size * square_size || used[num])
+            if (num < 1 || num > static_cast<long long>(square_size * square_size) || used[num])
             {
                 return false; // Out of range or duplicate
             }
@@ -106,13 +106,13 @@ bool is_magic_square(const vector<vector<int>> &square)
         }
     }
 
-    // total
-    int total = square_size * (square_size * square_size + 1) / 2;
+    // Calculate the magic constant
+    long long total = static_cast<long long>(square_size) * (square_size * square_size + 1) / 2;
 
     // Check row sums
     for (const auto &row : square)
     {
-        int sum = 0;
+        long long sum = 0;
         for (int num : row)
         {
             sum += num;
@@ -124,7 +124,7 @@ bool is_magic_square(const vector<vector<int>> &square)
     // Check column sums
     for (size_t col = 0; col < square_size; ++col)
     {
-        int sum = 0;
+        long long sum = 0;
         for (size_t row = 0; row < square_size; ++row)
         {
             sum += square[row][col];
@@ -133,8 +133,8 @@ bool is_magic_square(const vector<vector<int>> &square)
             return false;
     }
 
-    // Check sums
-    int dg1 = 0, dg2 = 0;
+    // Check diagonal sums
+    long long dg1 = 0, dg2 = 0;
     for (size_t i = 0; i < square_size; ++i)
     {
         dg1 += square[i][i];                   // Main diagonal

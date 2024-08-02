@@ -23,12 +23,17 @@ int main()
         cout << endl;
     */
 
-    string s = "abc_DEF_&&_hij_??!!";
-    // string s = "abc_DEF_&&_hij_\\?\\?!!"; // Escaped version
+    /*
 
-    capitalize(s);
-    cout << s << endl
-         << endl;
+     string s = "abc_DEF_&&_hij_??!!";
+        // string s = "abc_DEF_&&_hij_\\?\\?!!"; // Escaped version
+
+        capitalize(s);
+        cout << s << endl
+             << endl;
+
+
+    */
 
     // vector<int> v1{1, 3, 5};
     // vector<int> v2{2, 4, 6, 8};
@@ -53,40 +58,37 @@ int main()
         cout << fave_number << " is my favorite too!" << endl << endl;
     */
 
-    /*
-        string str = "abc_DEF_&&_hij_??!!";
-        string STR = new_capitalized_version(str);
+    // string str = "abc_DEF_&&_hij_??!!";
+    // string STR = new_capitalized_version(str);
 
-        cout << str << endl;
-        cout << STR << endl;
-        cout << endl;
-    */
+    // cout << str << endl;
+    // cout << STR << endl;
+    // cout << endl;
 
-    /*
+    vector<vector<int>> square1 = {{8, 3, 4},
+                                   {1, 5, 9},
+                                   {6, 7, 2}};
 
-        vector<vector<int>> square1 = {{8, 3, 4},
-                                    {1, 5, 9},
-                                    {6, 7, 2}};
+    vector<vector<int>> square2 = {{2, 7, 14, 11},
+                                   {9, 16, 5, 4},
+                                   {15, 10, 3, 6},
+                                   {8, 1, 12, 13}};
 
-     vector<vector<int>> square2 = {{2, 7, 14, 11},
-                                    {9, 16, 5, 4},
-                                    {15, 10, 3, 6},
-                                    {8, 1, 12, 13}};
+    vector<vector<int>> square3 = {{1},
+                                   {2, 3}};
 
-     vector<vector<int>> square3 = {{1},
-                                    {2, 3}};
+    vector<vector<int>> square4 = {{5, 5, 5},
+                                   {5, 5, 5},
+                                   {5, 5, 5}};
 
-     vector<vector<int>> square4 = {{5, 5, 5},
-                                    {5, 5, 5},
-                                    {5, 5, 5}};
+    cout << boolalpha;
 
-     cout << boolalpha;
+    cout << is_magic_square(square1) << endl;
+    cout << is_magic_square(square2) << endl;
+    cout << is_magic_square(square3) << endl;
+    cout << is_magic_square(square4) << endl;
 
-     cout << is_magic_square(square1) << endl;
-     cout << is_magic_square(square2) << endl;
-     cout << is_magic_square(square3) << endl;
-     cout << is_magic_square(square4) << endl;
+    return 0;
 
-     return 0;
-    */
+    
 }
