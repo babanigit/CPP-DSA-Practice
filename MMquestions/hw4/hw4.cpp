@@ -15,7 +15,7 @@ void print(const vector<int> &v)
     cout << endl;
 }
 
-// basic arithmatics
+// basic arithmetics
 void basic_arith(int i1, int i2)
 {
     cout << "The specified ints were: " << i1 << " and " << i2 << endl;
@@ -35,11 +35,11 @@ bool leap_year(int year)
 // capitalize function
 void capitalize(string &s)
 {
-    for (char &c : s)
+    for (char &character : s)
     {
-        if (islower(c))
+        if (islower(character))
         {
-            c = toupper(c);
+            character = toupper(character);
         }
     }
 }
@@ -55,10 +55,10 @@ vector<int> concatenate(const vector<int> &v1, const vector<int> &v2)
 // reverse the array of vector
 void reverse(vector<int> &v)
 {
-    size_t N = v.size();
-    for (size_t i = 0; i < N / 2; ++i)
+    size_t trail = v.size();
+    for (size_t i = 0; i < trail / 2; ++i)
     {
-        swap(v[i], v[N - 1 - i]); // Swapping the elements
+        swap(v[i], v[trail - 1 - i]); // swapping
     }
 }
 
@@ -81,24 +81,24 @@ string new_capitalized_version(string s)
 // square
 bool is_magic_square(const vector<vector<int>> &square)
 {
-    size_t N = square.size();
-    if (N == 0)
+    size_t square_size = square.size();
+    if (square_size == 0)
         return true; // Empty square is considered magic
 
     // Check if square is square
     for (const auto &row : square)
     {
-        if (row.size() != N)
+        if (row.size() != square_size)
             return false; // Not square
     }
 
-    // Check for unique numbers from 1 to N^2
-    vector<bool> used(N * N + 1, false);
+    // Check for unique numbers from 1 to square_size^2
+    vector<bool> used(square_size * square_size + 1, false);
     for (const auto &row : square)
     {
         for (int num : row)
         {
-            if (num < 1 || num > N * N || used[num])
+            if (num < 1 || num > square_size * square_size || used[num])
             {
                 return false; // Out of range or duplicate
             }
@@ -106,8 +106,8 @@ bool is_magic_square(const vector<vector<int>> &square)
         }
     }
 
-    // Check magic total
-    int magic_total = N * (N * N + 1) / 2;
+    // total
+    int total = square_size * (square_size * square_size + 1) / 2;
 
     // Check row sums
     for (const auto &row : square)
@@ -117,30 +117,30 @@ bool is_magic_square(const vector<vector<int>> &square)
         {
             sum += num;
         }
-        if (sum != magic_total)
+        if (sum != total)
             return false;
     }
 
     // Check column sums
-    for (size_t col = 0; col < N; ++col)
+    for (size_t col = 0; col < square_size; ++col)
     {
         int sum = 0;
-        for (size_t row = 0; row < N; ++row)
+        for (size_t row = 0; row < square_size; ++row)
         {
             sum += square[row][col];
         }
-        if (sum != magic_total)
+        if (sum != total)
             return false;
     }
 
-    // Check diagonal sums
-    int diag1 = 0, diag2 = 0;
-    for (size_t i = 0; i < N; ++i)
+    // Check sums
+    int dg1 = 0, dg2 = 0;
+    for (size_t i = 0; i < square_size; ++i)
     {
-        diag1 += square[i][i];         // Main diagonal
-        diag2 += square[i][N - 1 - i]; // Secondary diagonal
+        dg1 += square[i][i];                   // Main diagonal
+        dg2 += square[i][square_size - 1 - i]; // Secondary diagonal
     }
-    if (diag1 != magic_total || diag2 != magic_total)
+    if (dg1 != total || dg2 != total)
         return false;
 
     return true; // All checks passed

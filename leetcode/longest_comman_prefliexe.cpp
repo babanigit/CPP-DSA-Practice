@@ -26,8 +26,6 @@ public:
             ans += first[i];
         }
         return ans;
-
-
     }
 };
 
