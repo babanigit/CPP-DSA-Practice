@@ -27,7 +27,7 @@
 class Rational {
 public:
     Rational(); // this dont works
-    
+
     Rational(int num);
     Rational(int num, int den);
 
@@ -48,6 +48,7 @@ public:
 private:
     int num;
     int den;
+    int hello;
 
     void make_den_pos();
     void simplify();

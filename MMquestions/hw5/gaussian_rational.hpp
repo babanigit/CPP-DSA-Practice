@@ -1,8 +1,8 @@
-#ifndef gaussian_rational_hpp
-#define gaussian_rational_hpp
+#ifndef GAUSSIAN_RATIONAL_HPP
+#define GAUSSIAN_RATIONAL_HPP
 
 #include "rational.hpp"
- 
+
 class GaussRat {
 public:
     // Default constructor
@@ -37,4 +37,4 @@ private:
     Rational imag;
 };
 
-#endif /* gaussian_rational_hpp */
+#endif // GAUSSIAN_RATIONAL_HPP

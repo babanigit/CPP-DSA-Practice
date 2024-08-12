@@ -15,7 +15,7 @@ Rational::Rational() : num(0), den(1) {
 
 Rational::Rational(int n)        : num(n), den(1) {}
 
-Rational::Rational(int n, int d) : num(n), den(d) {
+Rational::Rational(int n, int d) : num(n), den(d){
     assert(den != 0);
     make_den_pos();
     simplify();
