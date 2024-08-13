@@ -23,17 +23,12 @@ public:
             mid_squared = static_cast<long long>(mid) * mid;
 
             if (mid_squared == x)
-            {
                 return mid;
-            }
             else if (mid_squared < x)
-            {
                 low = mid + 1;
-            }
             else
-            {
                 high = mid - 1;
-            }
+
             /* code */
         }
 
