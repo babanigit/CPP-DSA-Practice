@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+    
     for (int den_1 = 1; den_1 < 10; ++den_1) {
         for (int num_1 = 1; num_1 < den_1; ++num_1) {
             for (int den_2 = 1; den_2 < 10; ++den_2) {
