@@ -20,7 +20,7 @@ public:
         while (low <= high)
         {
             mid = low + (high - low) / 2;
-            mid_squared = static_cast<long long>(mid) * mid;
+            mid_squared = static_cast<long long>(mid) * static_cast<long long>( mid);
 
             if (mid_squared == x)
                 return mid;
